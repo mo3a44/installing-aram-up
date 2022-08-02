@@ -167,6 +167,7 @@ This will detect blue color and publish the x,y coordinates to /direction topic
 
  Open another terminal
 ```
+ ```
 $ rosrun moveit_pkg move_group_node
 ```
 This will subscribe to /direction topic and execute motion by using Moveit move group
