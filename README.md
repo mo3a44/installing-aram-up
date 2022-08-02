@@ -76,8 +76,10 @@ $ rosrun robot_arm_pkg joint_states_to_gazebo.py
 $ sudo chmod +x ~/catkin_ws/src/arduino_robot_arm/robot_arm_pkg/scripts/joint_states_to_gazebo.py
 Controlling the robot arm by Moveit and kinematics
 ```
+```
 $ roslaunch moveit_pkg demo.launch
 ```
+
 You can also connect with hardware by running:
 ```
 $ rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB0 _baud:=115200
