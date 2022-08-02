@@ -116,27 +116,28 @@ $ python color_thresholding.py
 Using OpenCV with the robot arm in ROS
 In Real Robot
 
-    In a terminal run
+   In a terminal run
+
 ```
 $ roslaunch moveit_pkg demo.launch
 ```
 this will run Rviz
 
-    connect with Arduino:
+   connect with Arduino:
 
-    select the Arduino port to be used on Ubuntu system
+   select the Arduino port to be used on Ubuntu system
 
-    change the permissions (it might be ttyACM)
+   change the permissions (it might be ttyACM)
     ```
     $ ls -l /dev | grep ttyUSB
     
-    $ sudo chmod -R 777 /dev/ttyUSB0
+   $ sudo chmod -R 777 /dev/ttyUSB0
     ```
     upload the code from Arduino IDE
 ```
 $ rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0 _baud:=115200
 ```
-    In another terminal
+   In another terminal
 ```
 $ rosrun moveit_pkg get_pose_openCV.py
 ```
