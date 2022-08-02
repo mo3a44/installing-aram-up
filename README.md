@@ -123,50 +123,50 @@ this will run Rviz
     select the Arduino port to be used on Ubuntu system
 
     change the permissions (it might be ttyACM)
-
+    ```
     $ ls -l /dev | grep ttyUSB
-
+    
     $ sudo chmod -R 777 /dev/ttyUSB0
-
+    ```
     upload the code from Arduino IDE
-
+```
 $ rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0 _baud:=115200
-
+```
     In another terminal
-
+```
 $ rosrun moveit_pkg get_pose_openCV.py
-
+```
 This will detect blue color and publish the x,y coordinates to /direction topic
 
 (Note: check the camera index and update the script if needed)
 
-    Open another terminal
-
+   Open another terminal
+```
 $ rosrun moveit_pkg move_group_node
-
+```
 This will subscribe to /direction topic and execute motion by using Moveit move group
 
 The pick and place actions are performed from the Arduino sketch directly.
 In simulation (Gazebo)
 
-    In a terminal run
-
+   In a terminal run
+```
 $ roslaunch moveit_pkg demo_gazebo.launch
-
+```
 this will run Rviz and gazebo
 
-    In another terminal
-
+   In another terminal
+```
 $ rosrun moveit_pkg get_pose_openCV.py
-
+```
 This will detect blue color and publish the x,y coordinates to /direction topic
 
 (Note: check the camera index and update the script if needed)
 
-    Open another terminal
-
+ Open another terminal
+```
 $ rosrun moveit_pkg move_group_node
-
+```
 This will subscribe to /direction topic and execute motion by using Moveit move group
 
 We can’t visualize the pick and place actions in gazebo
