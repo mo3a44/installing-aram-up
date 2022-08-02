@@ -55,39 +55,40 @@ Configuring Arduino with ROS
 
 Usage
 Controlling the robot arm by joint_state_publisher
-
+```
 $ roslaunch robot_arm_pkg check_motors.launch
-
+```
 You can also connect with hardware by running:
-
+```
 $ rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB0 _baud:=115200
-
+```
 (Note: You may need to use ttyACM)
 Simulation
 
 Run the following instructions to use gazebo
-
+```
 $ roslaunch robot_arm_pkg check_motors.launch
 $ roslaunch robot_arm_pkg check_motors_gazebo.launch
 $ rosrun robot_arm_pkg joint_states_to_gazebo.py
-
+```
 (You may need to change the permission)
-
+```
 $ sudo chmod +x ~/catkin_ws/src/arduino_robot_arm/robot_arm_pkg/scripts/joint_states_to_gazebo.py
 Controlling the robot arm by Moveit and kinematics
-
+```
 $ roslaunch moveit_pkg demo.launch
-
+```
 You can also connect with hardware by running:
-
+```
 $ rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB0 _baud:=115200
-
+```
 (Note: You may need to use ttyACM)
 Simulation
 
 Run the following instruction to use gazebo
-
+```
 $ roslaunch moveit_pkg demo_gazebo.launch
+```
 Pick and place by using OpenCV
 Preparation
 
@@ -99,23 +100,24 @@ Testing the camera and OpenCV
 Run color_thresholding.py to test the camera
 
 Before running, find the camera index normally it is video0
-
+```
 $ ls -l /dev | grep video
-
+```
 If it is not, update line 8 in color_thresholding.py
 
 8 cap=cv2.VideoCapture(0)
 
 Then run
-
+```
 $ python color_thresholding.py
+```
 Using OpenCV with the robot arm in ROS
 In Real Robot
 
     In a terminal run
-
+```
 $ roslaunch moveit_pkg demo.launch
-
+```
 this will run Rviz
 
     connect with Arduino:
