@@ -168,7 +168,7 @@ This will detect blue color and publish the x,y coordinates to /direction topic
 (Note: check the camera index and update the script if needed)
 
  Open another terminal
-```
+
  ```
 $ rosrun moveit_pkg move_group_node
 ```
